@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Type Effect JS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Nunito";
+      }
+      .showcase {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: url("../img/city_in_night.jpg");
+        height: 100vh;
+        width: 100vw;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #000;
+        color: #f2f2f2;
+        box-shadow: inset 300px 300px 350px rgba(0, 0, 0, 0.5),
+          inset -300px -300px 350px rgba(0, 0, 0, 0.5);
+      }
+      .container {
+        width: 80%;
+        line-height: 1.9;
+        margin: auto;
+        font-size: 1.4rem;
+      }
+      .container p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      .txt-type .txt {
+        border-right: 0.2rem solid #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="showcase">
+      <div class="container">
+        <h1>
+          Welcome to my site -
+          <!-- the data word will appear for 3000 miliseconds -->
+          <span
+            class="txt-type"
+            data-wait="2000"
+            data-words='["Web Design", "UI/UX Design", "English Teacher"]'
+          ></span>
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non
+          nulla commodi ad delectus ullam praesentium, rem maiores deserunt
+          repellendus!
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const TypeWriter = function(txtElement, words, waitTime = 3000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = "";
+        this.wordIndex = 0;
+        this.wait = parseInt(waitTime, 10);
+        this.type();
+        this.isDeleting = false;
+      };
+      // type method
+      TypeWriter.prototype.type = function() {
+        // current index of word
+        const current = this.wordIndex % this.words.length;
+        // get full text of current word
+        const fullTxt = this.words[current];
+        // check if deleting
+        if (this.isDeleting) {
+          // remove a character
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          //  add a character
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        // insert txt into element
+        this.txtElement.innerHTML = `<span class="txt">${this.txt} </span>`;
+
+        // initial type speed
+        let typeSpeed = 300;
+        if (this.isDeleting) {
+          typeSpeed /= 2;
+        }
+        //  if word is completed
+        if (!this.isDeleting && this.txt === fullTxt) {
+          // make a pause at end
+          typeSpeed = this.wait;
+          // set delete to true
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          // move to the next word
+          this.wordIndex++;
+          typeSpeed = 500;
+        }
+        setTimeout(() => this.type(), typeSpeed);
+      };
+      // init on DOM load
+      document.addEventListener("DOMContentLoaded", init);
+      function init() {
+        const txtElement = document.querySelector(".txt-type");
+        const words = JSON.parse(txtElement.getAttribute("data-words"));
+        const wait = txtElement.getAttribute("data-wait");
+        // init TypeWriter
+        new TypeWriter(txtElement, words, wait);
+      }
+      function a() {
+        console.log("a");
+        b();
+      }
+      function b() {
+        console.log("b");
+        a();
+      }
+      setTimeout(() => a(), 3000);
+    </script>
+  </body>
+</html>

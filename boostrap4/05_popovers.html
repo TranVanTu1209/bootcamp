@@ -1,0 +1,137 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Popovers</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+			integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+			crossorigin="anonymous"
+		/>
+		<style></style>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Popovers section</h1>
+			</div>
+
+			<div class="container mt-5">
+				<br />
+				<br />
+				<br />
+				<button
+					class="btn btn-primary"
+					data-placement="top"
+					data-toggle="popover"
+					data-content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+				incidunt possimus, nesciunt provident iure sit? popovers on top"
+				>
+					popovers on top
+				</button>
+				<button
+					class="btn btn-info"
+					data-placement="right"
+					data-toggle="popover"
+					data-content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+				incidunt possimus, nesciunt provident iure sit? popovers on top"
+				>
+					popovers on right
+				</button>
+				<button
+					class="btn btn-danger"
+					data-placement="bottom"
+					data-toggle="popover"
+					data-content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+				incidunt possimus, nesciunt provident iure sit? popovers on top"
+				>
+					popovers on bottom
+				</button>
+				<button
+					class="btn btn-secondary"
+					data-placement="left"
+					data-toggle="popover"
+					data-content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+				incidunt possimus, nesciunt provident iure sit? popovers on top"
+				>
+					popovers on left
+				</button>
+				<br />
+				<br />
+				<br />
+				<br />
+				<!--dismissible popovers  -->
+				<button
+					class="btn btn-secondary"
+					id="btn-1"
+					data-placement="right"
+					data-toggle="popover"
+					data-content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+				incidunt possimus, nesciunt provident iure sit? popovers on top"
+					data-trigger="focus"
+				>
+					popovers on left
+				</button>
+				<br />
+				<br />
+				<br />
+				<br />
+				<!-- control with js -->
+				<button class="btn btn-primary" onclick="showPopover()">
+					Show popover
+				</button>
+				<button class="btn btn-danger" onclick="hidePopover()">
+					Hide popover
+				</button>
+				<button class="btn btn-success" onclick="togglePopover()">
+					Toggle popover
+				</button>
+			</div>
+		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+			integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			// init popovers
+			$('[data-toggle="popover"]').popover();
+			function showPopover() {
+				$("#btn-1").popover("show");
+			}
+			function hidePopover() {
+				$("#btn-1").popover("hide");
+			}
+			function togglePopover() {
+				$("#btn-1").popover("toggle");
+			}
+			// popover events
+			$("#btn-1").on("show.bs.popover", (e) => {
+				console.log("pop over show");
+			});
+			$("#btn-1").on("shown.bs.popover", (e) => {
+				console.log("pop over shown");
+			});
+			$("#btn-1").on("hide.bs.popover", (e) => {
+				console.log("pop over hide");
+			});
+			$("#btn-1").on("hidden.bs.popover", (e) => {
+				console.log("pop over hidden");
+			});
+		</script>
+	</body>
+</html>

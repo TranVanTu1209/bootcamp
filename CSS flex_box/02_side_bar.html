@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side bar test</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ddd;
+    }
+
+    #side-bar {
+      position: relative;
+      height: 100vh;
+      background-color: rgb(3, 70, 70);
+      width: 20vw;
+
+    }
+    .appear {
+      transform: translateX(0);
+    }
+    #side-bar #container {
+      flex-direction: column;
+      justify-content: space-between;
+      display: flex;
+      height: 100vh;
+      padding: 10px;
+      flex-wrap: wrap;
+      transition: all 0.5s ease-in-out;
+    }
+
+    a {
+      color: #fff;
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .thin-bar {
+      width: 30px;
+      height: 3px;
+      background-color: rgb(22, 173, 173);
+      margin: 4px;
+    }
+
+    #switch-side-bar {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      transform: translateX(-20vw);
+    }
+
+  </style>
+</head>
+
+<body>
+  <aside id="side-bar">
+    <div id="container">
+      <div class="top-side-bar">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Sign In</a>
+          </li>
+          <li>
+            <a href="#">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-side-bar">
+        <ul>
+          <li>
+            <a href="#">Settings</a>
+          </li>
+          <li>
+            <a href="#">Question</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="switch-side-bar">
+      <div class="thin-bar"></div>
+      <div class="thin-bar"></div>
+      <div class="thin-bar"></div>
+    </div>
+  </aside>
+  <script src="../js/02_side_bar.js"></script>
+</body>
+
+</html>

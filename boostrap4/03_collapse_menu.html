@@ -1,0 +1,102 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Collapse menu & Accordion</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+			integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+			crossorigin="anonymous"
+		/>
+		<style></style>
+	</head>
+	<body>
+		<div class="container mt-5">
+			<button
+				href=""
+				class="btn btn-danger mb-4 d-block"
+				data-toggle="collapse"
+				data-target="#collapse-1"
+			>
+				Read more
+			</button>
+			<div class="collapse mb-5" id="collapse-1">
+				<div class="card">
+					<div class="card-body">
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+							Mollitia, facere. Lorem ipsum dolor sit, amet consectetur
+							adipisicing elit. Eaque omnis molestiae nam sequi dolorum
+							repellendus, saepe quaerat voluptatibus! Est architecto odit alias
+							corrupti iusto cum possimus illo aliquid? Similique nobis quam
+							porro veniam soluta facilis possimus ad ab, quis tempore adipisci
+							necessitatibus enim repellendus placeat delectus laudantium
+							repudiandae libero quasi vitae. Quasi quos nisi hic eligendi est
+							doloribus facilis quibusdam dignissimos laboriosam voluptatum
+							adipisci animi perferendis et pariatur, voluptas voluptatem rerum
+							iste! Quis, illo ex. Error similique corporis, sequi aliquam at
+							temporibus eius rerum perferendis non. Sapiente sed quos aperiam.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- accordion -->
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header">
+						<h5>
+							<a
+								class="btn btn-success"
+								href="#collapse-2"
+								data-parent="#accordion"
+								data-toggle="collapse"
+								>Collapse One</a
+							>
+						</h5>
+					</div>
+
+					<div id="collapse-2" class="collapse show">
+						<div class="card-body">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod,
+							autem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Tempora accusamus fugiat voluptate debitis nobis hic. Eligendi
+							culpa praesentium suscipit laboriosam accusamus sapiente nihil
+							numquam voluptatum ratione temporibus libero officia laudantium,
+							iure quis tempore at minus eius consequatur fugit recusandae,
+							deserunt minima excepturi dolore. Blanditiis magnam libero
+							explicabo, cum vel exercitationem!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+			integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			$(".carousel").carousel({
+				interval: 2000,
+				keyboard: true,
+				pause: "hover",
+				wrap: true
+			});
+		</script>
+	</body>
+</html>

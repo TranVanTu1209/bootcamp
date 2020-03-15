@@ -1,0 +1,36 @@
+.navbar {
+  box-shadow: 2px 2px 5px #3292a6;
+  opacity: 0.9;
+  background-color: #fff; }
+  .navbar .navbar-brand {
+    color: #fff; }
+    .navbar .navbar-brand:hover {
+      color: #3292a6; }
+  .navbar .nav-item {
+    font-size: 1.4rem;
+    padding-right: 1.4rem; }
+    .navbar .nav-item .nav-link {
+      color: #fff; }
+      .navbar .nav-item .nav-link:hover {
+        color: #3292a6; }
+
+#showcase {
+  position: relative;
+  background: url("/img/moutain.jpg");
+  min-height: 600px; }
+  #showcase .primary-overlay {
+    position: absolute;
+    background-color: rgba(50, 146, 166, 0.8);
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%; }
+
+#showcase:before {
+  background-color: rgba(50, 146, 166, 0.8);
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 1; }
+
+/*# sourceMappingURL=style.css.map */

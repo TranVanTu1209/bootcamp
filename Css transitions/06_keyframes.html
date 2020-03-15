@@ -1,0 +1,71 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Keyframes</title>
+		<style>
+			div {
+				width: 300px;
+				height: 100px;
+				animation: 4.5s moveRectangle infinite;
+				background-color: red;
+				border-radius: 50%;
+			}
+			@keyframes moveRectangle {
+				25% {
+					transform: translate(200px, 0) rotate(50deg);
+					background-color: blue;
+				}
+				50% {
+					transform: translate(200px, 200px) rotate(100deg);
+					background-color: green;
+				}
+				75% {
+					transform: translate(0, 200px) rotate(150deg);
+					background-color: pink;
+				}
+				100% {
+					transform: translate(0, 0) rotate(-10deg);
+					background-color: aqua;
+				}
+			}
+			p {
+				animation: 5s textLarger 5 1s;
+        position: absolute;
+        left: 300px;
+        font-size: 2rem;
+			}
+			@keyframes textLarger {
+        0% {
+          transform: scale(1);
+        }
+				25% {
+					color: blue;
+					transform: scale(1.5);
+				}
+				50% {
+					color: yellow;
+					transform: scale(1.75);
+				}
+				75% {
+					color: red;
+					transform: scale(2.25);
+				}
+				100% {
+					color: red;
+					transform: scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div>
+
+    </div> -->
+
+		<p style="margin-top: 400px;">hello world</p>
+	</body>
+</html>

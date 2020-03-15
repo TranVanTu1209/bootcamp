@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Gallery Hover Effect</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <style>
+    .grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+    }
+    .item img {
+      width: 400px;
+      height: 300px;
+      z-index: -1;
+    }
+    .item {
+      position: relative;
+      overflow: hidden;
+    }
+    .item i.fa-cloud {
+      color: rgb(28, 28, 175);
+    }
+    .item i.fa-facebook {
+      padding: 9px 16px;
+      color: rgb(13, 135, 139);
+    }
+    .item i.fa-camera {
+      color: red;
+    }
+    /* .item:hover img {
+      filter: blur(20%);
+      opacity: 0.8;
+    } */
+    .item i {
+      padding: 10px;
+      background-color: aliceblue;
+      position: absolute;
+      border-radius: 50%;
+      top: 100px;
+      left: 200px;
+      transform: scale(0) rotate(-179deg);
+      transition: all 1s ease-in-out;
+    }
+    .item::before {
+      content: "";
+      position: absolute;
+      background-color: rgba(165, 42, 42, 0.5);
+      top: 0;
+      transition: all 0.8s linear;
+      left: 0;
+      transform: scale(0) rotate(90deg);
+      z-index: -1;
+    }
+    .item:hover::before {
+      z-index: 0;
+      width: 400px;
+      height: 300px;
+       transform: scale(1) rotate(180deg);
+       border-radius: 50%;
+    }
+    .item:hover i {
+      transform: scale(1.2) rotate(0deg);
+    }
+  </style>
+<body>
+  <h1>Welcome to my gallery</h1>
+  <div class="grid-gallery">
+    <div class="item item-1">
+      <img src="../img/hotel10.jpg" alt="">
+      <i class="fa fa-camera fa-2x"></i>
+    </div>
+    <div class="item item-2">
+      <img src="../img/hotel9.jpg" alt="">
+      <i class="fa fa-cloud fa-2x"></i>
+    </div>
+    <div class="item item-3">
+      <img src="../img/hotel11.jpg" alt="">
+      <i class="fa fa-facebook fa-2x"></i>
+    </div>
+  </div>
+
+</body>
+
+</html>

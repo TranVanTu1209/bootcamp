@@ -1,0 +1,65 @@
+@import "variables";
+@import "functions";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  background: $light-color;
+  color: set-text-color($light-color);
+  line-height: 1.7;
+}
+header {
+  background: $dark-color;
+  padding: 1rem;
+  color: set-text-color($dark-color);
+  h1 {
+    text-align: center;
+  }
+}
+.section {
+  padding: 3rem;
+  h3 {
+    color: $success-color;
+    font-size: 2rem;
+  }
+  &-a {
+    background: $warning-color;
+    color: set-text-color($warning-color);
+  }
+  &-b {
+    background: $info-color;
+    color: set-text-color($info-color);
+  }
+}
+%btn-shared {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.btn {
+  &-light {
+    @extend %btn-shared;
+    background: $light-color;
+    color: set-text-color($light-color);
+    &:hover {
+      @include transform(rotate(30deg));
+      background: darken($light-color, 20%);
+    }
+  }
+  &-dark {
+    @extend %btn-shared;
+    background: $dark-color;
+    color: set-text-color($dark-color);
+    &:hover {
+      @include transform(rotate(-30deg));
+      background: lighten($dark-color, 20%);
+    }
+  }
+}

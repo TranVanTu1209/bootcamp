@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Property</title>
+    <style>
+      .item1 {
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: aqua;
+        transform: translate(0, 0);
+        transition: all 4s ease-in-out;
+        margin: auto;
+        text-align: center;
+      }
+      .item1:hover {
+        /* transform: translateX(100px);
+        transform: translateY(30px); */
+        /* transform: scale(3,1.5);
+        transform-origin: left bottom; */
+        transform: translate(100px, 0) translate(0, 100px);
+        /* transform-origin: left top; */
+        /* transform: scale(0.6) rotate(179deg) scale(1); */
+      }
+      div:last-child {
+        padding: 20px;
+        background-color: aqua;
+        border-top-right-radius: 100px;
+        box-shadow: 5px 0px rgba(0, 0, 0, 0.5);
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transform Property</h1>
+
+    <h4>Translate value</h4>
+    <div class="item1">scale value</div>
+    <div>
+      Tin hoat dong
+    </div>
+  </body>
+</html>

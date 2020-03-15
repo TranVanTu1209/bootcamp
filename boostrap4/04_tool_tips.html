@@ -1,0 +1,123 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Collapse menu & Accordion</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+			integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+			crossorigin="anonymous"
+		/>
+		<style></style>
+	</head>
+	<body>
+		<div class="container mt-5">
+			<button
+				class="btn btn-primary"
+				data-placement="top"
+				data-toggle="tooltip"
+				title="Tooltip on top"
+			>
+				Tooltip on top
+			</button>
+			<button
+				class="btn btn-info"
+				data-placement="right"
+				data-toggle="tooltip"
+				title="Tooltip on right"
+			>
+				Tooltip on right
+			</button>
+			<button
+				class="btn btn-danger"
+				data-placement="bottom"
+				data-toggle="tooltip"
+				title="Tooltip on bottom"
+			>
+				Tooltip on bottom
+			</button>
+			<button
+				class="btn btn-secondary"
+				data-placement="left"
+				data-toggle="tooltip"
+				title="Tooltip on left"
+			>
+				Tooltip on left
+			</button>
+			<br />
+			<br />
+			<!-- tooltips with HTML -->
+			<button
+				id="hello"
+				class="btn btn-dark mt-5"
+				data-placement="bottom"
+				data-toggle="tooltip"
+				data-HTML="true"
+				title="
+          <h3>Hello world  </h3>
+          <p> This is HTML tooltip </p>
+        "
+			>
+				Tooltip with HTML
+			</button>
+			<br />
+			<br />
+			<hr />
+			<!-- tooltip with js -->
+
+			<button class="btn btn-light mt-5" onclick="showTooltips()">
+				Tooltip trigger with js
+			</button>
+			<button class="btn btn-warning mt-5" onclick="hiddenTooltips()">
+				Tooltip trigger with js
+			</button>
+			<button class="btn btn-success mt-5" onclick="toggleTooltips()">
+				Tooltip trigger with js
+			</button>
+		</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+			integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			// init tooltips
+			$('[data-toggle="tooltip"]').tooltip();
+			// trigger tooltips
+			function showTooltips() {
+				$("#hello").tooltip("show");
+			}
+			function hiddenTooltips() {
+				$("#hello").tooltip("hide");
+			}
+			function toggleTooltips() {
+				$("#hello").tooltip("toggle");
+			}
+			// tooltips event
+			$("#hello").on("show.bs.tooltip", function() {
+				console.log("Show");
+			});
+			$("#hello").on("shown.bs.tooltip", function() {
+				console.log("Shown");
+			});
+			$("#hello").on("hide.bs.tooltip", function() {
+				console.log("Hide");
+			});
+		</script>
+	</body>
+</html>

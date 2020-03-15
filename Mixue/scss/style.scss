@@ -1,0 +1,129 @@
+/** @format */
+
+$primary: #3292a6;
+$primary-overlay: rgba(50, 146, 166, 0.7);
+.bg-primary {
+	background-color: $primary;
+	color: #fff;
+}
+// navbar
+.navbar {
+	box-shadow: 2px 2px 5px $primary;
+	opacity: 0.9;
+	background-color: #fff;
+
+	.navbar-brand {
+		color: #fff;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.nav-item {
+		font-size: 1.4rem;
+		padding-right: 1.4rem;
+
+		.nav-link {
+			color: #fff;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+// showcase
+#showcase {
+	position: relative;
+	background: url("../img/moutain.jpg");
+	min-height: 600px;
+
+	img {
+		margin-left: 5rem;
+	}
+
+	.container {
+		padding-top: 5rem;
+	}
+
+	.primary-overlay {
+		position: absolute;
+		background-color: $primary-overlay;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+}
+
+#showcase:before {
+	background-color: rgba(50, 146, 166, 0.8);
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	z-index: 1;
+}
+
+// news letter
+#news-letter {
+	input {
+		padding-top: 0.3rem;
+	}
+
+	button i {
+		position: relative;
+		top: 1px;
+	}
+}
+
+#boxes .row div:nth-child(even) {
+	color: #fff;
+}
+
+#about {
+	.info-header {
+		width: 60%;
+		margin: auto;
+		border-bottom: 1px #ddd solid;
+	}
+}
+#author {
+	h3 {
+		color: $primary;
+		transition: all 0.4s ease-in-out;
+	}
+	.card {
+		transition: all 0.4s ease-in-out;
+	}
+	.card:hover {
+		cursor: pointer;
+		background-color: $primary;
+		color: #fff;
+		h3 {
+			color: #fff;
+		}
+	}
+}
+
+// accordion
+#accordion .card-header h5 {
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	#showcase {
+		min-height: 500px;
+
+		h1 {
+			font-size: 2.5rem;
+		}
+	}
+
+	#news-letter {
+		input {
+			margin-bottom: 0.5rem;
+		}
+	}
+}

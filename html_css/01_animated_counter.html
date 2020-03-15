@@ -1,0 +1,140 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Animated Counter</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Oxanium&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: "Oxanium";
+				background: lightblue
+					url("https://source.unsplash.com/collection/190727/1600x900");
+				color: #000;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				background-repeat: no-repeat;
+				align-items: center;
+				height: 80vh;
+			}
+			#counters {
+				background-color: rgb(24, 24, 105);
+				width: 100vw;
+				padding: 3rem 0;
+			}
+			#counters i {
+				color: skyblue;
+				border: 3px solid #888;
+				padding: 1rem;
+				border-radius: 5px;
+			}
+			#counters i.fa-facebook {
+				padding: 1rem 1.5rem;
+			}
+			#counters .counter {
+				font-size: 2rem;
+			}
+			.container {
+				max-width: 1100px;
+				margin: 0 auto;
+				overflow: hidden;
+				display: grid;
+				text-align: center;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 1rem;
+				line-height: 1.8;
+				color: #fff;
+			}
+			header {
+				flex: 1;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				/* margin-bottom: 2rem; */
+			}
+			header h1 {
+				font-size: 3rem;
+			}
+			@media (max-width: 600px) {
+				.container {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div><h1>Animated Counter</h1></div>
+		</header>
+		<section id="counters">
+			<div class="container">
+				<div>
+					<i class="fa fa-youtube fa-4x"></i>
+					<div class="counter" data-target="1000000">
+						0
+					</div>
+					<h3>Subscribers</h3>
+				</div>
+				<div>
+					<i class="fa fa-twitter fa-4x"></i>
+					<div class="counter" data-target="500000">
+						0
+					</div>
+					<h3>Followers</h3>
+				</div>
+				<div>
+					<i class="fa fa-facebook fa-4x"></i>
+					<div class="counter" data-target="150000">
+						0
+					</div>
+					<h3>Likes</h3>
+				</div>
+				<div>
+					<i class="fa fa-linkedin fa-4x"></i>
+					<div class="counter" data-target="78000">
+						0
+					</div>
+					<h3>Connections</h3>
+				</div>
+			</div>
+		</section>
+		<script>
+			const counters = document.querySelectorAll(".counter");
+			const speed = 500;
+			counters.forEach((counter) => {
+				const updateCounter = () => {
+					const target = +counter.getAttribute("data-target");
+					const count = +counter.innerText;
+					// console.log(typeof count)
+					const inc = speed / 2;
+					if (count < target) {
+						counter.innerText = count + inc;
+						setTimeout(updateCounter, 1);
+					} else {
+						counter.innerText = target;
+					}
+				};
+				updateCounter();
+			});
+			// window.onload = function() {
+			// 	updateCounter()
+			// };
+		</script>
+	</body>
+</html>
